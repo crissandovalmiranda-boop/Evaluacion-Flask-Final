@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de compra</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <main class="tarjeta resultado">
+        <h1>Resultado de compra</h1>
+        <p>Nombre del cliente: ${{ nombre }}</p>
+        <p>Total sin descuento: ${{ "%.0f"|format(total) }}</p>
+        <p>El descuento es: ${{ "%.1f"|format(descuento) }} ({{ porcentaje_descuento }}%)</p>
+        <p>El total a pagar es de: ${{ "%.1f"|format(total_pagar) }}</p>
+        <a class="volver" href="{{ url_for('ejercicio1') }}">Realizar otra compra</a>
+        <a class="volver" href="{{ url_for('inicio') }}">Volver al menú</a>
+    </main>
+</body>
+</html>
